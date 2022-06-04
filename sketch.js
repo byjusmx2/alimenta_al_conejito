@@ -36,7 +36,7 @@ var canH;
 
 function preload()
 {
-  bg_img = loadImage('background.png');
+  bg_img = loadImage('fondo.png');
   food = loadImage('melon.png');
   rabbit = loadImage('Rabbit-01.png');
 
@@ -80,13 +80,13 @@ function setup()
 
   //btn 1
   button = createImg('cut_btn.png');
-  button.position(20,30);
+  button.position(50,30);
   button.size(50,50);
   button.mouseClicked(drop);
 
    //btn 2
    button2 = createImg('cut_btn.png');
-   button2.position(330,35);
+   button2.position(350,35);
    button2.size(60,60);
    button2.mouseClicked(drop2);
  
@@ -97,7 +97,7 @@ function setup()
    button3.mouseClicked(drop3);
 
   mute_btn = createImg('mute.png');
-  mute_btn.position(450,20);
+  mute_btn.position(1250,20);
   mute_btn.size(50,50);
   mute_btn.mouseClicked(mute);
   
@@ -117,7 +117,7 @@ function setup()
   bunny.addAnimation('crying',sad);
   bunny.changeAnimation('blinking');
   
-  fruit = Bodies.circle(300,300,20);
+  fruit = Bodies.circle(290,300,20);
   Matter.Composite.add(rope.body,fruit);
 
   fruit_con = new Link(rope,fruit);
@@ -157,7 +157,7 @@ function draw()
     eating_sound.play();
   }
 
-  if(fruit!=null && fruit.position.y>=650)
+  if(fruit!=null && fruit.position.y>=620)
   {
     bunny.changeAnimation('crying');
     bk_song.stop();
